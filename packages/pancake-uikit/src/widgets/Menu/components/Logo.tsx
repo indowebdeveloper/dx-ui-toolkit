@@ -47,12 +47,12 @@ const StyledLink = styled(Link)`
 
 const Logo: React.FC<Props> = ({ isDark, href, logoPath }) => {
   const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = (
-    <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
-    </>
-  );
+  // const innerLogo = (
+  //   <>
+  //     <LogoIcon className="mobile-icon" />
+  //     <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
+  //   </>
+  // );
 
   return (
     <Flex>
