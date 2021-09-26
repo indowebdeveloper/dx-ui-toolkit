@@ -7,6 +7,7 @@ import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 interface Props {
   isDark: boolean;
   href: string;
+  logoPath: string;
 }
 
 const blink = keyframes`
@@ -44,7 +45,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isDark, href }) => {
+const Logo: React.FC<Props> = ({ isDark, href, logoPath }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -56,12 +57,14 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
-          {innerLogo}
+        <StyledLink as="a" href={href} aria-label="Swap home page">
+          {/* {innerLogo} */}
+          <img src={logoPath} alt="logo cool" />
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
-          {innerLogo}
+        <StyledLink to={href} aria-label="Swap home page">
+          {/* {innerLogo} */}
+          <img src={logoPath} alt="logo cool" />
         </StyledLink>
       )}
     </Flex>
