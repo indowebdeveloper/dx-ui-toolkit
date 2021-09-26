@@ -1,6 +1,6 @@
 {
   "name": "@dxswap/uikit",
-  "version": "0.1.6",
+  "version": "0.1.9-e.b",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -52,5 +52,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "2d8bb3282ac4846f84291fdd3401600824188dee"
 }

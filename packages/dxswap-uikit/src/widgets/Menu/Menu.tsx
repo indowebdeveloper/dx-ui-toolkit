@@ -66,7 +66,9 @@ const Menu: React.FC<NavProps> = ({
   langs,
   buyCakeLabel,
   children,
-  logoUrl
+  logoUrl,
+  tokenAddress,
+  tokenPriceDecimal
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -114,7 +116,7 @@ const Menu: React.FC<NavProps> = ({
         <Flex alignItems="center">
           {!isMobile && (
             <Box mr="12px">
-              <CakePrice cakePriceUsd={cakePriceUsd} />
+              <CakePrice cakePriceUsd={cakePriceUsd} tokenAddress={tokenAddress} tokenPriceDecimal={tokenPriceDecimal} />
             </Box>
           )}
           <Box mt="4px">
@@ -134,17 +136,6 @@ const Menu: React.FC<NavProps> = ({
       <BodyWrapper mt={!subLinks ? `${MENU_HEIGHT + 1}px` : "0"}>
         <Inner isPushed={false} showMenu={showMenu}>
           {children}
-          <Footer
-            items={footerLinks}
-            isDark={isDark}
-            toggleTheme={toggleTheme}
-            langs={langs}
-            setLang={setLang}
-            currentLang={currentLang}
-            cakePriceUsd={cakePriceUsd}
-            buyCakeLabel={buyCakeLabel}
-            mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-          />
         </Inner>
       </BodyWrapper>
       {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}

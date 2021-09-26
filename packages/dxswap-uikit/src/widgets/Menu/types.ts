@@ -31,4 +31,6 @@ export interface NavProps {
   langs: Language[];
   setLang: (lang: Language) => void;
   logoUrl: string;
+  tokenAddress: string;
+  tokenPriceDecimal: number;
 }
